@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "road-tour"
 version = "1.0.0"
-description = "Ground state of a constrained TSP, written as a nine-variable quantum QUBO."
+description = "A constrained traveling salesman problem written as one quantum QUBO, whose optimal tour is the ground state."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [

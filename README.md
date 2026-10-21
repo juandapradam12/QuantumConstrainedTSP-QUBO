@@ -1,6 +1,8 @@
 # A quantum QUBO for a constrained TSP
 
-Five cities are joined by eight roads. A tour has to leave city 0, visit every city once, return to city 0, and reach city 2 as the second city after departure. There is no road between 0 and 2. Under that constraint the shortest tour is the ground state of a nine-variable quantum QUBO: $0 \rightarrow 4 \rightarrow 2 \rightarrow 3 \rightarrow 1 \rightarrow 0$, of length 16. Exhaustive evaluation of the energy and simulated annealing return the same state.
+A constrained traveling salesman problem can be written as one quantum QUBO. Route cost, forbidden roads, and the required visit order sit in a single energy, and the optimal tour is the ground state of that energy. The minimum is computed exactly and recovered by simulated annealing.
+
+The case below is a sparse road network. Five cities are joined by eight roads. A tour has to leave city 0, visit every city once, return to city 0, and reach city 2 as the second city after departure. There is no road between 0 and 2. Under that constraint the ground state is $0 \rightarrow 4 \rightarrow 2 \rightarrow 3 \rightarrow 1 \rightarrow 0$, of length 16.
 
 ## The roads
 
