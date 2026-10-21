@@ -115,6 +115,8 @@ The shorter return is $2 \rightarrow 3 \rightarrow 1 \rightarrow 0$, costing $1 
 
 The state that encodes $0 \rightarrow 4 \rightarrow 2 \rightarrow 3 \rightarrow 1$ is the unique ground state of $H$ at $\lambda = 25$, with energy 16, and it is the state the annealer returns. It is the same tour the degree of city 4 selects, followed by the cheaper of the two ways back.
 
+The problem statement is `docs/enunciado.docx`. The written report is `docs/memoria.pdf`.
+
 ## Reproducing the figures
 
 The numerical record is `results/summary.json`. Regenerating it rewrites that file and the figures in this note.
