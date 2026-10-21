@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.mplconfig/
+.cache/
+*.egg-info/
+.venv/
+dist/
+build/
+figures/_crop_*.png
