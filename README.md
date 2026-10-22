@@ -57,17 +57,27 @@ $$
 
 Each city is visited once, so city 0 and city 2 occupy no other step, and steps 0 and 2 hold no other city. Those variables are removed rather than penalised. Nine variables remain: cities $\{1,3,4\}$ at steps $\{1,3,4\}$.
 
-The energy is
+The energy is the sum of four terms,
 
 $$
 H = H_{\mathrm{length}} + \lambda\, H_{\mathrm{missing}} + \lambda \left(H_{\mathrm{step}} + H_{\mathrm{city}}\right).
 $$
 
-$H_{\mathrm{length}}$ sums $d_{ij}\, x_{i,t} x_{j,t+1}$ over the roads, with $t+1$ read modulo 5. $H_{\mathrm{missing}}$ counts the same products over pairs that are not a road. The step and city terms are squared one-hot defects on the nine variables,
+Let $E$ be the set of roads and $d_{ij} = d_{ji}$ their lengths. Let $A_{ij} = 1$ when $\{i,j\} \in E$ and $A_{ij} = 0$ otherwise, including $i = j$. The step $t+1$ is read modulo 5.
+
+$$
+H_{\mathrm{length}} = \sum_{t=0}^{4} \sum_{i,j \,:\, \{i,j\} \in E} d_{ij}\, x_{i,t} x_{j,t+1},
+$$
+
+$$
+H_{\mathrm{missing}} = \sum_{t=0}^{4} \sum_{i,j} (1 - A_{ij})\, x_{i,t} x_{j,t+1},
+$$
 
 $$
 H_{\mathrm{step}} = \sum_{t \in \{1,3,4\}} \left( \sum_{i \in \{1,3,4\}} x_{i,t} - 1 \right)^2,
-\qquad
+$$
+
+$$
 H_{\mathrm{city}} = \sum_{i \in \{1,3,4\}} \left( \sum_{t \in \{1,3,4\}} x_{i,t} - 1 \right)^2.
 $$
 
